@@ -1,0 +1,107 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Proyecto Simulación Computacional</title>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/materialize.css' %}">        
+        <link rel="stylesheet" type="text/css" href="{% static 'icon/style.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    </head>
+    <body>
+                    
+       
+
+    	<div class="container">
+    	    
+    	    <h4 class="center-align">Proyecto Simulación Computacional</h4>
+    	    
+    	    <div class="row">
+                <form action="#" enctype="multipart/form-data" id="id-form-input" method ='POST' action=".">
+                    {% csrf_token %}
+
+                    <div class="row">
+                        <div class="input-field col s12">
+                          {{ input_form.numero_retadores}}
+                          <label for="{{ input_form.numero_retadores.id_for_label }}" data-error="Escriba una cantidad mayor que cero." data-success="Valor correcto.">Numero de Retadores</label>
+                         
+                        </div>
+                        <div>
+                            <p id="error_group_course"></p>                         
+                        </div>                  
+                    </div>
+
+                    <div class="row">
+                        <div class="input-field col s12">
+                          {{ input_form.numero_reinas}}
+                          <label for="{{ input_form.numero_reinas.id_for_label }}" data-error="La cantidad de reinas debe ser mayor que uno y menor o igual a 8." data-success="Valor correcto.">Cantidad de Reinas</label>
+                        </div>
+                        <div>
+                            <p id="error_group_course"></p>
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+                        <div class="input-field col s12">
+                          {{ input_form.tiempo_llegadas}}
+                          <label for="{{ input_form.tiempo_llegadas.id_for_label }}" data-error="Escriba una cantidad mayor que cero." data-success="Valor correcto.">Tiempo de Llegada</label>
+                         
+                        </div>
+                        <div>
+                            <p id="error_group_course"></p>                         
+                        </div>                  
+                    </div>
+
+                    <div class="row">
+                        <div class="input-field col s12">
+                          {{ input_form.desviacion_tiempo}}
+                          <label for="{{ input_form.desviacion_tiempo.id_for_label }}" data-error="La desviacion debe ser mayor o igual a cero y menor que el tiempo de llegada." data-success="Valor correcto.">Desviacion Tiempo de LLegada</label>                                                    
+                        </div>
+                        <div>
+                            <p id="error_group_course"></p>                         
+                        </div>                  
+                    </div>
+
+
+                    
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <div class="center-align">
+                                <a id="btn-submit-form-input" class="waves-effect waves-light btn blue lighten-2"><i class="material-icons left">sentiment_satisfied</i>Procesar</a>
+                            </div>
+                        </div>
+                     </div>
+                     
+                    <div  class="row">
+                        <hr>
+                    </div>
+                     
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <div class="center-align">
+                                <a href="{% static "EstadisticasNReinas.xlsx" %}" download class="waves-effect waves-light btn blue lighten-2"><i class="material-icons left">cloud_download</i>Salida</a>
+                               
+                            </div>
+                        </div>
+                    </div>
+
+                  </form>
+            </div>
+            
+    	</div>       
+
+        <script src="{% static 'js/jquery.js' %}"></script>
+        <script src="{% static 'js/materialize.js' %}"></script>
+        <script src="{% static 'js/script.js' %}"></script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
